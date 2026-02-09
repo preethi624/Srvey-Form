@@ -13,6 +13,7 @@ function App() {
   return (
     <>
     <Routes>
+      <Route path='/' element={<AdminLogin/>}/>
       <Route path='/adminLogin' element={<AdminLogin/>}/>
       <Route path='/dashboard' element={<ProtectedRoute><AdminDashboard/></ProtectedRoute>}/>
       <Route path='/survey' element={<SurveyForm/>}/>
