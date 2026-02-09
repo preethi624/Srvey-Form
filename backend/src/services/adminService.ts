@@ -2,7 +2,7 @@ import { IAdminRepositry } from "../repository/IAdminRepository";
 import { IAdminService } from "./IAdminService";
 import jwt from "jsonwebtoken";
 import dotenv from"dotenv"
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import { IDatas } from "../interface/IDatas";
 
 
