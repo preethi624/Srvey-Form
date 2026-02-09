@@ -12,12 +12,12 @@ const adminSchema=new Schema<IAdmin>(
     },
     {timestamps:true}
 )
-adminSchema.pre("save", async function () {
+adminSchema.pre("save", async function (this: IAdmin) {
   if (!this.isModified("password")) return;
 
   const salt = await bcrypt.genSalt(10);
   this.password = await bcrypt.hash(this.password, salt);
 });
-const AdminModel= mongoose.model<IAdmin>("Admin",adminSchema)
 
-export default AdminModel
+const AdminModel = mongoose.model<IAdmin>("Admin", adminSchema);
+export default AdminModel;
